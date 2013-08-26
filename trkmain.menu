@@ -1,0 +1,187 @@
+LABEL TRK3DEF
+MENU LABEL ^Trinity Rescue Kit
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 trkmenu
+TEXT HELP
+                 default mode, with text menu.
+ENDTEXT
+
+LABEL TRK31
+MENU LABEL ^Failsafe mode
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose acpi=off noapic pci=conf1 vga=1
+TEXT HELP
+                 No menu, VGA, noacpi, noapic.
+ENDTEXT
+
+LABEL TRK32
+MENU LABEL ^Run from RAM
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 trkinmem trkmenu
+TEXT HELP
+                 best >= 512mb, 256mb min.
+ENDTEXT
+
+LABEL TRK33
+MENU LABEL ^Run 'mclone' in client mode (!)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 mclone
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK34
+MENU LABEL ^Simple VGA mode
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=1 pci=conf1 splash=off trkmenu
+TEXT HELP
+                 debugging of kernel output.
+ENDTEXT
+
+LABEL TRK35
+MENU LABEL ^Virusscan all drives
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 virusscan
+TEXT HELP
+                 Clamav, non interactive.
+ENDTEXT
+
+LABEL TRK36
+MENU LABEL ^Try more pcmcia and usb nics (when not detected)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 pcmcia trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK37
+MENU LABEL ^Try more SCSI drivers (when disks not detected)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 scsidrv trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK38
+MENU LABEL ^Secure shell server enabled
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 sshd
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK39
+MENU LABEL ^Execute local scripts on harddrive of PC
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 locscr
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK310
+MENU LABEL ^Bootserver to boot other TRK clients
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 trkbootnet trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK311
+MENU LABEL ^Fileshare all drives as guest, no security
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 smbguest trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK312
+MENU LABEL ^Single user mode (no menu)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 runlevel 1
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK313
+MENU LABEL ^Acpi=off, noapic PCI=bios (Alternate boot 1)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose acpi=off noapic pci=bios trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK314
+MENU LABEL ^Acpi=off, noapic PCI=any (Alternate boot 2)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose acpi=off noapic trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK315
+MENU LABEL ^PCI=conf2 (Alternate boot 3)
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf2 trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK316
+MENU LABEL ^Verbose startup for debugging (no menu)
+KERNEL er/plugins/trk/kernel.trk
+APPEND INITRD er/plugins/trk/initrd.trk ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 debugging
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK317
+MENU LABEL ^SSH, boot - and guest fileserver, run from RAM
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 sshd trkinmem smbguest trkbootnet trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK318
+MENU LABEL ^Run from RAM, run mclone as client
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 trkinmem mclone
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK319
+MENU LABEL ^Proxy server support enabled
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 proxy trkmenu
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
+
+LABEL TRK320
+MENU LABEL ^All devices set to read-only
+KERNEL er/plugins/trk/kernel.trk
+INITRD er/plugins/trk/initrd.trk
+APPEND ramdisk_size=100000 root=/dev/ram0 vga=788 splash=verbose pci=conf1 allro
+TEXT HELP
+                 Trinity Rescue Kit.
+ENDTEXT
